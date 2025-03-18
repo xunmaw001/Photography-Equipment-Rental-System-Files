@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.QicaizulinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.QicaizulinEntity" id="qicaizulinMap">
+        <result property="dingdanbianhao" column="dingdanbianhao"/>
+        <result property="qicaibianhao" column="qicaibianhao"/>
+        <result property="qicaimingcheng" column="qicaimingcheng"/>
+        <result property="qicaileixing" column="qicaileixing"/>
+        <result property="meitianjiage" column="meitianjiage"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="zulintianshu" column="zulintianshu"/>
+        <result property="zongjine" column="zongjine"/>
+        <result property="zulinriqi" column="zulinriqi"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.QicaizulinVO" >
+		SELECT * FROM qicaizulin  qicaizulin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.QicaizulinVO" >
+		SELECT  qicaizulin.* FROM qicaizulin  qicaizulin 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.QicaizulinView" >
+
+		SELECT  qicaizulin.* FROM qicaizulin  qicaizulin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.QicaizulinView" >
+		SELECT * FROM qicaizulin  qicaizulin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
